@@ -1,0 +1,12 @@
+{
+ "_comment": "Initial values of the regional HBV head: medians over the 602 gauged CAMELS-GB catchments of a per-catchment HBV-9 calibration (NSE on 1989-2008; 10 000 Latin-hypercube parameter sets, best set per catchment, then gradient refinement from the 4 best sets). Used for GB, US and AUS alike. Values are float64 reprs.",
+ "FC": 261.6934814453125,
+ "LP": 0.8637269735336304,
+ "BETA": 2.0855767726898193,
+ "PERC": 1.725977897644043,
+ "UZL": 12.001076221466064,
+ "K0": 0.43491192162036896,
+ "K1": 0.2615295499563217,
+ "K2": 0.0528946500271558,
+ "MAXBAS": 1.884293019771576
+}

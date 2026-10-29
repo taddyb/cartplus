@@ -1,0 +1,85 @@
+dataset,model,seed,used_in,command
+gb,cart,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, fig:map_gb/us (d), tab:lofo (CaRT+ minus CaRT), fig:hydro_gb/us",python -m cart.train --model cart --dataset gb --seed 0 --out runs/gb_cart_s0
+gb,cart,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, fig:map_gb/us (d), tab:lofo (CaRT+ minus CaRT), fig:hydro_gb/us",python -m cart.train --model cart --dataset gb --seed 1 --out runs/gb_cart_s1
+gb,cart,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, fig:map_gb/us (d), tab:lofo (CaRT+ minus CaRT), fig:hydro_gb/us",python -m cart.train --model cart --dataset gb --seed 2 --out runs/gb_cart_s2
+gb,cartplus,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us, fig:lofo, tab:lofo, fig:hydro_gb/us, tab:hedge (parameter-space ensemble, paper_forward.csv)",python -m cart.train --model cartplus --dataset gb --seed 0 --out runs/gb_cartplus_s0
+gb,cartplus,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us, fig:lofo, tab:lofo, fig:hydro_gb/us, tab:hedge (parameter-space ensemble, paper_forward.csv)",python -m cart.train --model cartplus --dataset gb --seed 1 --out runs/gb_cartplus_s1
+gb,cartplus,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us, fig:lofo, tab:lofo, fig:hydro_gb/us, tab:hedge (parameter-space ensemble, paper_forward.csv)",python -m cart.train --model cartplus --dataset gb --seed 2 --out runs/gb_cartplus_s2
+gb,cartplus_no_p1,0,"fig:lofo, tab:lofo (leave out P1, runoff generation)",python -m cart.train --model cartplus_no_p1 --dataset gb --seed 0 --out runs/gb_cartplus_no_p1_s0
+gb,cartplus_no_p1,1,"fig:lofo, tab:lofo (leave out P1, runoff generation)",python -m cart.train --model cartplus_no_p1 --dataset gb --seed 1 --out runs/gb_cartplus_no_p1_s1
+gb,cartplus_no_p1,2,"fig:lofo, tab:lofo (leave out P1, runoff generation)",python -m cart.train --model cartplus_no_p1 --dataset gb --seed 2 --out runs/gb_cartplus_no_p1_s2
+gb,cartplus_no_p2,0,"fig:lofo, tab:lofo (leave out P2, quick release)",python -m cart.train --model cartplus_no_p2 --dataset gb --seed 0 --out runs/gb_cartplus_no_p2_s0
+gb,cartplus_no_p2,1,"fig:lofo, tab:lofo (leave out P2, quick release)",python -m cart.train --model cartplus_no_p2 --dataset gb --seed 1 --out runs/gb_cartplus_no_p2_s1
+gb,cartplus_no_p2,2,"fig:lofo, tab:lofo (leave out P2, quick release)",python -m cart.train --model cartplus_no_p2 --dataset gb --seed 2 --out runs/gb_cartplus_no_p2_s2
+gb,cartplus_no_p3,0,"fig:lofo, tab:lofo (leave out P3, evaporation)",python -m cart.train --model cartplus_no_p3 --dataset gb --seed 0 --out runs/gb_cartplus_no_p3_s0
+gb,cartplus_no_p3,1,"fig:lofo, tab:lofo (leave out P3, evaporation)",python -m cart.train --model cartplus_no_p3 --dataset gb --seed 1 --out runs/gb_cartplus_no_p3_s1
+gb,cartplus_no_p3,2,"fig:lofo, tab:lofo (leave out P3, evaporation)",python -m cart.train --model cartplus_no_p3 --dataset gb --seed 2 --out runs/gb_cartplus_no_p3_s2
+gb,cartplus_no_p4,0,"fig:lofo, tab:lofo (leave out P4, exchange with the exterior), sec:contrib text (Costa Beck)",python -m cart.train --model cartplus_no_p4 --dataset gb --seed 0 --out runs/gb_cartplus_no_p4_s0
+gb,cartplus_no_p4,1,"fig:lofo, tab:lofo (leave out P4, exchange with the exterior), sec:contrib text (Costa Beck)",python -m cart.train --model cartplus_no_p4 --dataset gb --seed 1 --out runs/gb_cartplus_no_p4_s1
+gb,cartplus_no_p4,2,"fig:lofo, tab:lofo (leave out P4, exchange with the exterior), sec:contrib text (Costa Beck)",python -m cart.train --model cartplus_no_p4 --dataset gb --seed 2 --out runs/gb_cartplus_no_p4_s2
+gb,cartplus_no_p5,0,"fig:lofo, tab:lofo (leave out P5, snow)",python -m cart.train --model cartplus_no_p5 --dataset gb --seed 0 --out runs/gb_cartplus_no_p5_s0
+gb,cartplus_no_p5,1,"fig:lofo, tab:lofo (leave out P5, snow)",python -m cart.train --model cartplus_no_p5 --dataset gb --seed 1 --out runs/gb_cartplus_no_p5_s1
+gb,cartplus_no_p5,2,"fig:lofo, tab:lofo (leave out P5, snow)",python -m cart.train --model cartplus_no_p5 --dataset gb --seed 2 --out runs/gb_cartplus_no_p5_s2
+gb,hbv,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.hbv_regional --dataset gb --seed 0 --out runs/gb_hbv_s0
+gb,hbv,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.hbv_regional --dataset gb --seed 1 --out runs/gb_hbv_s1
+gb,hbv,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.hbv_regional --dataset gb --seed 2 --out runs/gb_hbv_s2
+gb,dhbv,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.dhbv --dataset gb --seed 0 --out runs/gb_dhbv_s0
+gb,dhbv,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.dhbv --dataset gb --seed 1 --out runs/gb_dhbv_s1
+gb,dhbv,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.dhbv --dataset gb --seed 2 --out runs/gb_dhbv_s2
+gb,lstm,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (b), fig:hydro_gb/us, tab:hedge (reference)",python -m baselines.lstm_stateful --dataset gb --seed 0 --out runs/gb_lstm_s0
+gb,lstm,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (b), fig:hydro_gb/us, tab:hedge (reference)",python -m baselines.lstm_stateful --dataset gb --seed 1 --out runs/gb_lstm_s1
+gb,lstm,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (b), fig:hydro_gb/us, tab:hedge (reference)",python -m baselines.lstm_stateful --dataset gb --seed 2 --out runs/gb_lstm_s2
+gb,ealstm,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (c), tab:hedge (reference)",python -m baselines.ealstm --dataset gb --seed 0 --out runs/gb_ealstm_s0
+gb,ealstm,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (c), tab:hedge (reference)",python -m baselines.ealstm --dataset gb --seed 1 --out runs/gb_ealstm_s1
+gb,ealstm,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (c), tab:hedge (reference)",python -m baselines.ealstm --dataset gb --seed 2 --out runs/gb_ealstm_s2
+us,cart,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, fig:map_gb/us (d), tab:lofo (CaRT+ minus CaRT), fig:hydro_gb/us",python -m cart.train --model cart --dataset us --seed 0 --out runs/us_cart_s0
+us,cart,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, fig:map_gb/us (d), tab:lofo (CaRT+ minus CaRT), fig:hydro_gb/us",python -m cart.train --model cart --dataset us --seed 1 --out runs/us_cart_s1
+us,cart,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, fig:map_gb/us (d), tab:lofo (CaRT+ minus CaRT), fig:hydro_gb/us",python -m cart.train --model cart --dataset us --seed 2 --out runs/us_cart_s2
+us,cartplus,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us, fig:lofo, tab:lofo, fig:hydro_gb/us, fig:ung_us, tab:ung_us, tab:hedge (parameter-space ensemble, paper_forward.csv)",python -m cart.train --model cartplus --dataset us --seed 0 --out runs/us_cartplus_s0
+us,cartplus,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us, fig:lofo, tab:lofo, fig:hydro_gb/us, fig:ung_us, tab:ung_us, tab:hedge (parameter-space ensemble, paper_forward.csv)",python -m cart.train --model cartplus --dataset us --seed 1 --out runs/us_cartplus_s1
+us,cartplus,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us, fig:lofo, tab:lofo, fig:hydro_gb/us, fig:ung_us, tab:ung_us, tab:hedge (parameter-space ensemble, paper_forward.csv)",python -m cart.train --model cartplus --dataset us --seed 2 --out runs/us_cartplus_s2
+us,cartplus_no_p1,0,"fig:lofo, tab:lofo (leave out P1, runoff generation)",python -m cart.train --model cartplus_no_p1 --dataset us --seed 0 --out runs/us_cartplus_no_p1_s0
+us,cartplus_no_p1,1,"fig:lofo, tab:lofo (leave out P1, runoff generation)",python -m cart.train --model cartplus_no_p1 --dataset us --seed 1 --out runs/us_cartplus_no_p1_s1
+us,cartplus_no_p1,2,"fig:lofo, tab:lofo (leave out P1, runoff generation)",python -m cart.train --model cartplus_no_p1 --dataset us --seed 2 --out runs/us_cartplus_no_p1_s2
+us,cartplus_no_p2,0,"fig:lofo, tab:lofo (leave out P2, quick release)",python -m cart.train --model cartplus_no_p2 --dataset us --seed 0 --out runs/us_cartplus_no_p2_s0
+us,cartplus_no_p2,1,"fig:lofo, tab:lofo (leave out P2, quick release)",python -m cart.train --model cartplus_no_p2 --dataset us --seed 1 --out runs/us_cartplus_no_p2_s1
+us,cartplus_no_p2,2,"fig:lofo, tab:lofo (leave out P2, quick release)",python -m cart.train --model cartplus_no_p2 --dataset us --seed 2 --out runs/us_cartplus_no_p2_s2
+us,cartplus_no_p3,0,"fig:lofo, tab:lofo (leave out P3, evaporation)",python -m cart.train --model cartplus_no_p3 --dataset us --seed 0 --out runs/us_cartplus_no_p3_s0
+us,cartplus_no_p3,1,"fig:lofo, tab:lofo (leave out P3, evaporation)",python -m cart.train --model cartplus_no_p3 --dataset us --seed 1 --out runs/us_cartplus_no_p3_s1
+us,cartplus_no_p3,2,"fig:lofo, tab:lofo (leave out P3, evaporation)",python -m cart.train --model cartplus_no_p3 --dataset us --seed 2 --out runs/us_cartplus_no_p3_s2
+us,cartplus_no_p4,0,"fig:lofo, tab:lofo (leave out P4, exchange with the exterior)",python -m cart.train --model cartplus_no_p4 --dataset us --seed 0 --out runs/us_cartplus_no_p4_s0
+us,cartplus_no_p4,1,"fig:lofo, tab:lofo (leave out P4, exchange with the exterior)",python -m cart.train --model cartplus_no_p4 --dataset us --seed 1 --out runs/us_cartplus_no_p4_s1
+us,cartplus_no_p4,2,"fig:lofo, tab:lofo (leave out P4, exchange with the exterior)",python -m cart.train --model cartplus_no_p4 --dataset us --seed 2 --out runs/us_cartplus_no_p4_s2
+us,cartplus_no_p5,0,"fig:lofo, tab:lofo (leave out P5, snow)",python -m cart.train --model cartplus_no_p5 --dataset us --seed 0 --out runs/us_cartplus_no_p5_s0
+us,cartplus_no_p5,1,"fig:lofo, tab:lofo (leave out P5, snow)",python -m cart.train --model cartplus_no_p5 --dataset us --seed 1 --out runs/us_cartplus_no_p5_s1
+us,cartplus_no_p5,2,"fig:lofo, tab:lofo (leave out P5, snow)",python -m cart.train --model cartplus_no_p5 --dataset us --seed 2 --out runs/us_cartplus_no_p5_s2
+us,hbv,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.hbv_regional --dataset us --seed 0 --out runs/us_hbv_s0
+us,hbv,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.hbv_regional --dataset us --seed 1 --out runs/us_hbv_s1
+us,hbv,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.hbv_regional --dataset us --seed 2 --out runs/us_hbv_s2
+us,dhbv,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.dhbv --dataset us --seed 0 --out runs/us_dhbv_s0
+us,dhbv,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.dhbv --dataset us --seed 1 --out runs/us_dhbv_s1
+us,dhbv,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf",python -m baselines.dhbv --dataset us --seed 2 --out runs/us_dhbv_s2
+us,lstm,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (b), fig:hydro_gb/us, fig:ung_us, tab:ung_us, tab:hedge (reference)",python -m baselines.lstm_stateful --dataset us --seed 0 --out runs/us_lstm_s0
+us,lstm,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (b), fig:hydro_gb/us, fig:ung_us, tab:ung_us, tab:hedge (reference)",python -m baselines.lstm_stateful --dataset us --seed 1 --out runs/us_lstm_s1
+us,lstm,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (b), fig:hydro_gb/us, fig:ung_us, tab:ung_us, tab:hedge (reference)",python -m baselines.lstm_stateful --dataset us --seed 2 --out runs/us_lstm_s2
+us,ealstm,0,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (c), fig:ung_us, tab:ung_us, tab:hedge (reference)",python -m baselines.ealstm --dataset us --seed 0 --out runs/us_ealstm_s0
+us,ealstm,1,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (c), fig:ung_us, tab:ung_us, tab:hedge (reference)",python -m baselines.ealstm --dataset us --seed 1 --out runs/us_ealstm_s1
+us,ealstm,2,"tab:u_gb/tab:u_us, tab:u_paired, tab:u_groups, fig:cdf, tab:u_spread, fig:map_gb/us (c), fig:ung_us, tab:ung_us, tab:hedge (reference)",python -m baselines.ealstm --dataset us --seed 2 --out runs/us_ealstm_s2
+aus,cart,0,"tab:aus, fig:map_aus",python -m cart.train --model cart --dataset aus --seed 0 --out runs/aus_cart_s0
+aus,cart,1,"tab:aus, fig:map_aus",python -m cart.train --model cart --dataset aus --seed 1 --out runs/aus_cart_s1
+aus,cart,2,"tab:aus, fig:map_aus",python -m cart.train --model cart --dataset aus --seed 2 --out runs/aus_cart_s2
+aus,cartplus,0,"tab:aus, fig:map_aus, tab:aus (sigma rows, forward runs in paper_forward.csv)",python -m cart.train --model cartplus --dataset aus --seed 0 --out runs/aus_cartplus_s0
+aus,cartplus,1,"tab:aus, fig:map_aus, tab:aus (sigma rows, forward runs in paper_forward.csv)",python -m cart.train --model cartplus --dataset aus --seed 1 --out runs/aus_cartplus_s1
+aus,cartplus,2,"tab:aus, fig:map_aus, tab:aus (sigma rows, forward runs in paper_forward.csv)",python -m cart.train --model cartplus --dataset aus --seed 2 --out runs/aus_cartplus_s2
+aus,hbv,0,"tab:aus, fig:map_aus",python -m baselines.hbv_regional --dataset aus --seed 0 --out runs/aus_hbv_s0
+aus,hbv,1,"tab:aus, fig:map_aus",python -m baselines.hbv_regional --dataset aus --seed 1 --out runs/aus_hbv_s1
+aus,hbv,2,"tab:aus, fig:map_aus",python -m baselines.hbv_regional --dataset aus --seed 2 --out runs/aus_hbv_s2
+aus,dhbv,0,"tab:aus, fig:map_aus",python -m baselines.dhbv --dataset aus --seed 0 --out runs/aus_dhbv_s0
+aus,dhbv,1,"tab:aus, fig:map_aus",python -m baselines.dhbv --dataset aus --seed 1 --out runs/aus_dhbv_s1
+aus,dhbv,2,"tab:aus, fig:map_aus",python -m baselines.dhbv --dataset aus --seed 2 --out runs/aus_dhbv_s2
+aus,lstm,0,"tab:aus, fig:map_aus",python -m baselines.lstm_stateful --dataset aus --seed 0 --out runs/aus_lstm_s0
+aus,lstm,1,"tab:aus, fig:map_aus",python -m baselines.lstm_stateful --dataset aus --seed 1 --out runs/aus_lstm_s1
+aus,lstm,2,"tab:aus, fig:map_aus",python -m baselines.lstm_stateful --dataset aus --seed 2 --out runs/aus_lstm_s2
+aus,ealstm,0,"tab:aus, fig:map_aus",python -m baselines.ealstm --dataset aus --seed 0 --out runs/aus_ealstm_s0
+aus,ealstm,1,"tab:aus, fig:map_aus",python -m baselines.ealstm --dataset aus --seed 1 --out runs/aus_ealstm_s1
+aus,ealstm,2,"tab:aus, fig:map_aus",python -m baselines.ealstm --dataset aus --seed 2 --out runs/aus_ealstm_s2

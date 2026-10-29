@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+# run outputs
+runs/
+results/
+outputs/
+tmp/
+# input files: published as release assets (scripts/data/fetch_data.py), not tracked
+data/*.npz
+data/*.part
