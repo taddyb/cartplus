@@ -1,7 +1,7 @@
 # CaRT / CaRT+
 
 Code for the paper *From hydrological laws to catchment models: A process-based model matches deep-learning accuracy on three
-continents* (Xia, 2026, [arXiv:2611.06382](https://arxiv.org/abs/2611.06382)). There is also an [illustrative guide](https://claude.ai/artifact/FCydFbuT63DCtUNMQBFvAS?sk=7Z_AwUL8bRIv-92Xs5tnWw) to the paper.
+continents* (Xia, 2026, [arXiv:2611.06382](https://arxiv.org/abs/2611.06382)). There is also an [illustrated guide](https://claude.ai/artifact/FCydFbuT63DCtUNMQBFvAS?sk=7Z_AwUL8bRIv-92Xs5tnWw) to the paper.
 
 The repository contains the regional conceptual models CaRT and CaRT+ (lumped daily
 catchment models whose per-catchment parameters come from a network of static catchment attributes), CaRT+ without each of its five
