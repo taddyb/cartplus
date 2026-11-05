@@ -1,7 +1,7 @@
 # CaRT / CaRT+
 
 Code for the paper *From hydrological laws to catchment models: A process-based model matches deep-learning accuracy on three
-continents* (Xia et al., in preparation). The repository contains the regional conceptual models CaRT and CaRT+ (lumped daily
+continents* (Xia, 2026, [arXiv:2611.06382](https://arxiv.org/abs/2611.06382)). The repository contains the regional conceptual models CaRT and CaRT+ (lumped daily
 catchment models whose per-catchment parameters come from a network of static catchment attributes), CaRT+ without each of its five
 process groups of refinements, the four benchmarks (regional HBV, dHBV, a stateful LSTM and the EA-LSTM), the scripts that build the
 CAMELS-US and CAMELS-AUS input files from public sources, the evaluation scripts that write the paper's tables and figures, and the
@@ -102,8 +102,21 @@ and 0.5 on AUS (`configs/paper_forward.csv`).
 
 ## Citation
 
-Xia, X., et al. (in preparation). From hydrological laws to catchment models: A process-based model matches deep-learning accuracy
-on three continents.
+Xia, X. (2026). From hydrological laws to catchment models: A process-based model matches deep-learning accuracy on three
+continents. arXiv:2611.06382. https://doi.org/10.48550/arXiv.2611.06382
+
+```bibtex
+@misc{xia2026catchmentlaws,
+  author        = {Xia, Xilin},
+  title         = {From hydrological laws to catchment models: A process-based model matches deep-learning accuracy on three continents},
+  year          = {2026},
+  eprint        = {2611.06382},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi           = {10.48550/arXiv.2611.06382},
+  url           = {https://arxiv.org/abs/2611.06382}
+}
+```
 
 Please also cite the datasets used (`DATA.md`).
 
