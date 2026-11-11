@@ -1,10 +1,13 @@
 #!/bin/bash
 # Author: tbindas
 # What it does: runs the checks of probes/tests/ and prints PASSED / FAILED per check.
-#   PY=.venv/bin/python GPU=0 RUNS=/mnt/ssd1/data/cartplus/runs/<new dir> STAGES="data params smoke" bash probes/tests/run_all.sh
+#   PY=.venv/bin/python GPU=0 RUNS=/mnt/ssd1/data/cartplus/runs/<new dir> STAGES="data params smoke dist distsmoke" bash probes/tests/run_all.sh
 # Stages: data (CPU) loader and metric code against the water_loss store and code; params (CPU) parameter table;
 # smoke (GPU) two 50-iteration runs of CaRT+ on the first 50 gauges with seed 111111, then the checks: finite loss,
 # no skipped step, same loss in both runs, water balance, test-period scores, NSE evaluation, metric code on the run.
+# dist (CPU + GPU) loader, chunk plan, gauge step and gradient accumulation of distributed CaRT+ (check_dist.py);
+# distsmoke (GPU) two runs of distributed CaRT+ on the first 50 gauges (CAP_SMOKE divides per chunk) with seed 111111, then
+# the checks: finite loss, no skipped step, same loss in both runs, outputs, gauge volume, divide water balance, evaluation.
 # RUNS must be a path that does not exist (nothing under /mnt/ssd1 is overwritten).
 # Experimental purpose: one command that shows the CaRT+ scaffolding on the dHBV MERIT setup is correct before a full run.
 set -u
@@ -30,6 +33,25 @@ if has smoke; then
   run $PY probes/eval_merit.py --run $A
   run $PY probes/tests/check_eval.py --run $A
   run $PY probes/tests/check_merit_data.py --run $A
+fi
+if has dist; then
+  echo "## GPU memory before: $(nvidia-smi --id=$GPU --query-gpu=memory.used,memory.total --format=csv,noheader)"
+  run $PY probes/tests/check_dist.py --stage data --gpu $GPU
+  run $PY probes/tests/check_dist.py --stage gpu --gpu $GPU
+fi
+if has distsmoke; then
+  : "${RUNS:?set RUNS to a new directory for the smoke runs}"
+  CAP_SMOKE=${CAP_SMOKE:-700}
+  A=$RUNS/dist_smoke_K${K}_i${ITERS}_a; B=$RUNS/dist_smoke_K${K}_i${ITERS}_b
+  [ -e "$A" ] || [ -e "$B" ] && { echo "$A or $B exists; pass a new path"; exit 1; }
+  echo "## GPU memory before: $(nvidia-smi --id=$GPU --query-gpu=memory.used,memory.total --format=csv,noheader)"
+  run $PY probes/train_merit_dist.py --K $K --iters $ITERS --cap $CAP_SMOKE --gpu $GPU --out $A
+  run $PY probes/train_merit_dist.py --K $K --iters $ITERS --cap $CAP_SMOKE --gpu $GPU --out $B
+  run $PY probes/tests/check_smoke.py --run $A --same $B
+  run $PY probes/tests/check_dist.py --stage run --run $A
+  run $PY probes/check_balance_merit_dist.py --run $A --gpu $GPU
+  run $PY probes/eval_merit.py --run $A
+  run $PY probes/tests/check_eval.py --run $A
 fi
 echo "## done: $([ $fail -eq 0 ] && echo 'all checks passed' || echo 'some checks FAILED')"
 exit $fail
